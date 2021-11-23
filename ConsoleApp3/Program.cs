@@ -21,7 +21,16 @@ namespace ConsoleApp3
 
             await Task.WhenAll(tasks);
 
-           
+            // var results = tasks.Select(t => t.Result);
+
+            Console.WriteLine(tasks.All(t => t.IsCompleted));
+
+            var results = tasks.Select(t => t.Result);
+
+            foreach (var res in results)
+            {
+                Console.WriteLine(res);
+            }
 
         }
     }
